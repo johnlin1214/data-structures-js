@@ -7,7 +7,7 @@ myNode.prototype.addNext = function(nextNode) {
   this.next = nextNode;
 }
 
-myNode.protoype.removeNext = function() {
+myNode.prototype.removeNext = function() {
   this.next = null;
 }
 
