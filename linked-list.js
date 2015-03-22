@@ -28,7 +28,7 @@ linkedList.prototype.removeFirst = function() {
 };
 
 linkList.prototype.insertLast = function(element) {
-  var node = new myNode(element)
+  var node = new myNode(element);
   if (this.head === null) {
     this.head = node;
   } else {
@@ -37,7 +37,9 @@ linkList.prototype.insertLast = function(element) {
       currentNode = currentNode.next;
     }
     currentNode.addNext(node);
-    }
   }
   this.size++;
 }
+
+module.exports = linkedList;
+
