@@ -41,5 +41,39 @@ linkList.prototype.insertLast = function(element) {
   this.size++;
 }
 
+linkedList.prototype.tail = function() {
+  var currentNode = this.head;
+  while(currentNode.next !== null) {
+    currentNode = currentNode.next;
+  }
+  return currentNode;
+}
+
+linkedList.prototype.removeLast = function() {
+  var currentNode = this.head;
+  if(currentNode.next === null){
+    this.head = null;
+  } else {
+    while(currentNode.next.next !== null) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = null;
+  }
+  this.size--;
+};
+
+LinkedList.prototype.traverseTo = function(index) {
+  if (index === 0) {
+    return this.head;
+  }
+  var currentNode = this.head;
+  var currentIndex = 0;
+  while(currentIndex < index) {
+    currentNode = currentNode.next;
+    currentIndex++;
+  }
+  return currentNode;
+}
+
 module.exports = linkedList;
 
